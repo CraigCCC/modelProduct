@@ -1,0 +1,54 @@
+<div class="container has-margin-bottom-20 is-fluid">
+  <nav class="level">
+    <div class="level-item has-text-centered">
+      <div>
+        <p class="heading">HW1122</p>
+        <p class="title">商品清單</p>
+      </div>
+    </div>
+    <div class="level-item has-text-centered">
+      <div>
+        <p class="heading">商品種類</p>
+        <p class="title"><%= @products_count %></p>
+      </div>
+    </div>
+    <div class="level-item has-text-centered">
+      <div>
+        <p class="heading">Let's go</p>
+        <p class="title"><%= link_to '新增商品', new_product_path%></p>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<div class="container">
+  <div class="columns is-multiline">
+    <% @products.each do |product| %>
+    <div class="column is-3">
+      <div class="card">
+        <div class="card-content">
+          <p class="title">
+            <%= link_to product.name, product_path(product) %>
+          </p>
+          <p class="subtitle level">
+            <span class="level-left">數量:<%= product.sku %></span>
+            <span class="level-right">售價:<%= product.price %></span>
+          </p>
+        </div>
+        <footer class="card-footer">
+          <p class="card-footer-item">
+            <span>
+              <%= link_to '編輯商品', edit_product_path(product) %>
+            </span>
+          </p>
+          <p class="card-footer-item">
+            <span>
+              <%= link_to '刪除商品', product_path(product), method: :delete, data: { confirm: '確定要刪除？'}%>
+            </span>
+          </p>
+        </footer>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

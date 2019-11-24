@@ -1,0 +1,26 @@
+  <%= form_for product do |f| %>
+    <div class="field">
+      <%= f.label :name, '商品名稱'%>
+      <div class="control">
+        <%= f.text_field :name, class: "input",placeholder: "請輸入商品名稱"%>
+      </div>
+    </div>
+    <div class="field">
+      <%= f.label :price, '商品價格'%>
+      <div class="control">
+        <%= f.number_field :price, class: "input",placeholder: "請輸入商品價格"%>
+      </div>
+    </div>
+    <div class="field">
+      <%= f.label :description, '商品描述'%>
+      <div class="control">
+        <%= f.text_area :description, class: "input",placeholder: "請輸入商品描述"%>
+      </div>
+    </div>
+    <div class="field">
+      <%= f.label :sku, '商品庫存'%>
+      <div class="control">
+        <%= f.number_field :sku, class: "input",placeholder: "請輸入商品名稱"%>
+      </div>
+    </div>
+  <% end %>

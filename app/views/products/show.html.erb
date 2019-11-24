@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="columns is-centered">
+    <div class="column is-half">
+      <div class="notification is-rounded">
+        <fieldset disabled>
+          <h1 class="title">商品資訊</h1>
+          <h2 class="subtitle">修改請按編輯</h2>
+          <%= render 'disform', product: @product %>
+        </fieldset>
+        <div class="field is-grouped is-grouped-right">
+          <p class="control">
+            <%= link_to 'Edit Product', edit_product_path, class: "button is-link" %>
+          </p>
+          <p class="control">
+            <%= link_to 'Cancel', root_path, class: "button" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
